@@ -6,7 +6,6 @@ namespace Vehicles
 {
     public interface IRefreshable
     {
-        void refreshModel(Vehicle vehicle);
         void addVehicle(Vehicle vehicle);
         void editVehicle(Vehicle vehicle);
         void vehicleRemoved(Vehicle vehicle);

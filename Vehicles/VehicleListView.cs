@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,26 +53,36 @@ namespace Vehicles
 
         }
 
-        public void refreshModel(Vehicle vehicle) {
-            bool is_on_list = false;
-            foreach (ListViewItem listItem in this.vehicleList.Items){
-                if (listItem.Tag == vehicle)
-                    is_on_list = true;
-            }
-
-            if (!is_on_list)
-                this.addVehicleToList(vehicle);
-        
-        }
-
         public void editVehicle(Vehicle vehicle)
         {
+            ListViewItem toRemove = null;
+            foreach (ListViewItem listItem in this.vehicleList.Items)
+            {
+                
+                if (listItem.Tag == vehicle)
+                {
+                    if (!vehicle.IsToAdd(this.filter_type))
+                    {
+                        toRemove = listItem;
+                        break;
+                    }
 
+                    listItem.SubItems[0].Text = vehicle.getBrand();
+                    listItem.SubItems[1].Text = vehicle.getMaxSpeed().ToString();
+                    listItem.SubItems[2].Text = vehicle.getProductionDate().ToString(CultureInfo.InvariantCulture);
+                    listItem.SubItems[3].Text = vehicle.getVehicleType().ToString();
+                    return;
+                }
+            }
+            if (toRemove != null)
+                this.vehicleList.Items.Remove(toRemove);
+            if (vehicle.IsToAdd(filter_type))
+                addVehicleToList(vehicle);
         }
 
         public void addVehicle(Vehicle vehicle)
         {
-            if (isToAddToListView(vehicle))
+            if (vehicle.IsToAdd(this.filter_type))
                 addVehicleToList(vehicle);
         }
 

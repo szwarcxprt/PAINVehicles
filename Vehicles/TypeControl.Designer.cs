@@ -40,6 +40,7 @@
             this.typeLabel.Size = new System.Drawing.Size(35, 13);
             this.typeLabel.TabIndex = 1;
             this.typeLabel.Text = "label1";
+            this.typeLabel.Visible = false;
             // 
             // typeBtn
             // 

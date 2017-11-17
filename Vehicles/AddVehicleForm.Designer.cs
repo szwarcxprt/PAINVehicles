@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -36,7 +37,9 @@
             this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.okBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.typeControl1 = new Vehicles.TypeControl();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -84,6 +87,8 @@
             this.brandTextBox.Name = "brandTextBox";
             this.brandTextBox.Size = new System.Drawing.Size(195, 20);
             this.brandTextBox.TabIndex = 4;
+            this.brandTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.brandTextBox_Validating);
+            this.brandTextBox.Validated += new System.EventHandler(this.brandTextBox_Validated);
             // 
             // maxSpeedTextBox
             // 
@@ -94,6 +99,8 @@
             this.maxSpeedTextBox.Name = "maxSpeedTextBox";
             this.maxSpeedTextBox.Size = new System.Drawing.Size(195, 20);
             this.maxSpeedTextBox.TabIndex = 5;
+            this.maxSpeedTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.maxSpeedTextBox_Validating);
+            this.maxSpeedTextBox.Validated += new System.EventHandler(this.maxSpeedTextBox_Validated);
             // 
             // dateTimePicker
             // 
@@ -127,6 +134,10 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // typeControl1
             // 
             this.typeControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -142,6 +153,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.ClientSize = new System.Drawing.Size(334, 411);
             this.Controls.Add(this.typeControl1);
             this.Controls.Add(this.cancelBtn);
@@ -155,6 +167,7 @@
             this.MinimumSize = new System.Drawing.Size(350, 450);
             this.Name = "AddVehicleForm";
             this.Text = "AddVehicleForm";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -171,5 +184,6 @@
         private System.Windows.Forms.Button okBtn;
         private System.Windows.Forms.Button cancelBtn;
         private TypeControl typeControl1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

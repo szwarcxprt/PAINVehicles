@@ -11,7 +11,12 @@ namespace Vehicles
 
         public MainForm()
         {
+            
             InitializeComponent();
+            this.model.Add(new Vehicle("Honda", 120, new DateTime(2000, 12, 12), VehicleType.Motorcycle));
+            this.model.Add(new Vehicle("Ford", 110, new DateTime(2000, 12, 12), VehicleType.Car));
+            this.model.Add(new Vehicle("Scania", 90, new DateTime(2000, 12, 12), VehicleType.Truck));
+            this.model.Add(new Vehicle("BMW", 180, new DateTime(2000, 12, 12), VehicleType.Car));
             VehicleListView view = new VehicleListView(this);
             view.setControlBox(false);
             view.Show();
@@ -44,14 +49,16 @@ namespace Vehicles
         }
 
         public void editVehicle(Vehicle vehicle)
-        {
+        {   
+            foreach (var view in views)
+                view.editVehicle(vehicle);
 
         }
 
-        public void refreshModel(Vehicle vehicle) {
+        /*public void refreshModel(Vehicle vehicle) {
             foreach (var view in views)
                 view.refreshModel(vehicle);
-        }
+        }*/
 
         public void addVehicle(Vehicle vehicle)
         {

@@ -50,5 +50,31 @@ namespace Vehicles
         public void setVehicleType(VehicleType vehicle_type){
             this.vehicle_type = vehicle_type;
         }
+
+        public bool IsToAdd(FilterType filter_type)
+        {
+            switch (filter_type)
+            {
+                case FilterType.None:
+                    return true;
+
+                case FilterType.Above:
+                    if (this.getMaxSpeed() > Consts.SPEED_BORDER)
+                    {
+                        return true;
+                    }
+                    return false;
+
+                case FilterType.Below:
+                    if (this.getMaxSpeed() < Consts.SPEED_BORDER)
+                    {
+                        return true;
+                    }
+                    return false;
+            }
+
+            return true;
+
+        }
     }
 }
