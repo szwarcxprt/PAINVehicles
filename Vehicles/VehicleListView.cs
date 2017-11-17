@@ -12,6 +12,7 @@ namespace Vehicles
 {
     public partial class VehicleListView : Form, IRefreshable
     {
+
         private List<Vehicle> model;
         private FilterType filter_type;
 
@@ -33,6 +34,7 @@ namespace Vehicles
         }
 
         private void addVehicleToList(Vehicle vehicle) {
+           
             ListViewItem item = new ListViewItem(vehicle.getBrand());
             item.Tag = vehicle;
             item.SubItems.Add(vehicle.getMaxSpeed().ToString());
@@ -60,6 +62,31 @@ namespace Vehicles
             if (!is_on_list)
                 this.addVehicleToList(vehicle);
         
+        }
+
+        public void editVehicle(Vehicle vehicle)
+        {
+
+        }
+
+        public void addVehicle(Vehicle vehicle)
+        {
+            if (isToAddToListView(vehicle))
+                addVehicleToList(vehicle);
+        }
+
+        private bool isToAddToListView(Vehicle vehicle)
+        {
+            if (this.filter_type == FilterType.None)
+                return true;
+
+            if (this.filter_type == FilterType.Below && vehicle.getMaxSpeed() < Consts.SPEED_BORDER )
+                return true;
+
+            if (vehicle.getMaxSpeed() > Consts.SPEED_BORDER && this.filter_type == FilterType.Above)
+                return true;
+
+            return false;
         }
 
         public void vehicleRemoved(Vehicle vehicle) {

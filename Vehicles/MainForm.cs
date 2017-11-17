@@ -38,14 +38,26 @@ namespace Vehicles
             return this.model;
         }
 
-        public void addVehicle(Vehicle vehicle) {
+        public void addNewVehicle(Vehicle vehicle) {
             this.model.Add(vehicle);
-            this.refreshModel(vehicle);
+          
+        }
+
+        public void editVehicle(Vehicle vehicle)
+        {
+
         }
 
         public void refreshModel(Vehicle vehicle) {
             foreach (var view in views)
                 view.refreshModel(vehicle);
+        }
+
+        public void addVehicle(Vehicle vehicle)
+        {
+            this.model.Add(vehicle);
+            foreach (var view in this.views)
+                view.addVehicle(vehicle);
         }
 
         public void vehicleRemoved(Vehicle vehicle) {

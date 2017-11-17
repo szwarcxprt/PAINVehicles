@@ -8,7 +8,6 @@ namespace Vehicles
 {
     public class Model: List<Vehicle>
     {
-        public static readonly int SPEED_BORDER = 100;
 
         public List<Vehicle> FilterVehicles(FilterType filter_type) {
             List<Vehicle> filtered = new List<Vehicle>();
@@ -21,14 +20,14 @@ namespace Vehicles
                 case FilterType.Below:
                     foreach (var vehicle in this)
                     {
-                        if (vehicle.getMaxSpeed() < SPEED_BORDER)
+                        if (vehicle.getMaxSpeed() < Consts.SPEED_BORDER)
                             filtered.Add(vehicle);
                     }
                     return filtered;
                 case FilterType.Above:
                     foreach (var vehicle in this)
                     {
-                        if (vehicle.getMaxSpeed() > SPEED_BORDER)
+                        if (vehicle.getMaxSpeed() > Consts.SPEED_BORDER)
                             filtered.Add(vehicle);
                     }
                     return filtered;

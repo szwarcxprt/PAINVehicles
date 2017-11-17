@@ -50,6 +50,7 @@
     <Compile Include="AddVehicleForm.Designer.cs">
       <DependentUpon>AddVehicleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consts.cs" />
     <Compile Include="FilterType.cs" />
     <Compile Include="Model.cs" />
     <Compile Include="TypeControl.cs">
