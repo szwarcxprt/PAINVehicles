@@ -25,6 +25,7 @@ namespace Vehicles
             set { this.typeLabel.BackColor = value; }
         }
 
+        [Category("Type control")]
         public VehicleType vehicle_type
         {
             get { return this._type; }

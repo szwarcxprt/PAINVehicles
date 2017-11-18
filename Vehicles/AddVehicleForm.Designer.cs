@@ -147,7 +147,7 @@
             this.typeControl1.Size = new System.Drawing.Size(250, 165);
             this.typeControl1.TabIndex = 9;
             this.typeControl1.typeLabel_BackColour = System.Drawing.SystemColors.ActiveCaption;
-            this.typeControl1.vehicle_type = Vehicles.VehicleType.Motorcycle;
+            this.typeControl1.vehicle_type = Vehicles.VehicleType.Car;
             // 
             // AddVehicleForm
             // 

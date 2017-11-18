@@ -28,101 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VehicleListView));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.addBtn = new System.Windows.Forms.ToolStripButton();
-            this.editBtn = new System.Windows.Forms.ToolStripButton();
-            this.removeBtn = new System.Windows.Forms.ToolStripButton();
-            this.showAllRBtn = new System.Windows.Forms.RadioButton();
-            this.showAboveRBtn = new System.Windows.Forms.RadioButton();
-            this.showBelowRBtn = new System.Windows.Forms.RadioButton();
             this.vehicleList = new System.Windows.Forms.ListView();
             this.Brand = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.MaxSpeed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductionDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.label1 = new System.Windows.Forms.Label();
+            this.menuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.elementCounter = new System.Windows.Forms.Label();
-            this.toolStrip1.SuspendLayout();
+            this.label1 = new System.Windows.Forms.Label();
+            this.showBelowRBtn = new System.Windows.Forms.RadioButton();
+            this.showAboveRBtn = new System.Windows.Forms.RadioButton();
+            this.showAllRBtn = new System.Windows.Forms.RadioButton();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // toolStrip1
-            // 
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addBtn,
-            this.editBtn,
-            this.removeBtn});
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(578, 25);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
-            // 
-            // addBtn
-            // 
-            this.addBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.addBtn.Image = ((System.Drawing.Image)(resources.GetObject("addBtn.Image")));
-            this.addBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.addBtn.Name = "addBtn";
-            this.addBtn.Size = new System.Drawing.Size(33, 22);
-            this.addBtn.Text = "Add";
-            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
-            // 
-            // editBtn
-            // 
-            this.editBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.editBtn.Image = ((System.Drawing.Image)(resources.GetObject("editBtn.Image")));
-            this.editBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editBtn.Name = "editBtn";
-            this.editBtn.Size = new System.Drawing.Size(31, 22);
-            this.editBtn.Text = "Edit";
-            this.editBtn.Click += new System.EventHandler(this.editBtn_Click);
-            // 
-            // removeBtn
-            // 
-            this.removeBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.removeBtn.Image = ((System.Drawing.Image)(resources.GetObject("removeBtn.Image")));
-            this.removeBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.removeBtn.Name = "removeBtn";
-            this.removeBtn.Size = new System.Drawing.Size(54, 22);
-            this.removeBtn.Text = "Remove";
-            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
-            // 
-            // showAllRBtn
-            // 
-            this.showAllRBtn.AutoSize = true;
-            this.showAllRBtn.Location = new System.Drawing.Point(138, 7);
-            this.showAllRBtn.Name = "showAllRBtn";
-            this.showAllRBtn.Size = new System.Drawing.Size(70, 17);
-            this.showAllRBtn.TabIndex = 1;
-            this.showAllRBtn.TabStop = true;
-            this.showAllRBtn.Text = "display all";
-            this.showAllRBtn.UseVisualStyleBackColor = true;
-            this.showAllRBtn.CheckedChanged += new System.EventHandler(this.showAllRBtn_CheckedChanged);
-            // 
-            // showAboveRBtn
-            // 
-            this.showAboveRBtn.AutoSize = true;
-            this.showAboveRBtn.Location = new System.Drawing.Point(278, 7);
-            this.showAboveRBtn.Name = "showAboveRBtn";
-            this.showAboveRBtn.Size = new System.Drawing.Size(80, 17);
-            this.showAboveRBtn.TabIndex = 2;
-            this.showAboveRBtn.TabStop = true;
-            this.showAboveRBtn.Text = "> 100 km/h";
-            this.showAboveRBtn.UseVisualStyleBackColor = true;
-            this.showAboveRBtn.CheckedChanged += new System.EventHandler(this.showAboveRBtn_CheckedChanged);
-            // 
-            // showBelowRBtn
-            // 
-            this.showBelowRBtn.AutoSize = true;
-            this.showBelowRBtn.Location = new System.Drawing.Point(374, 7);
-            this.showBelowRBtn.Name = "showBelowRBtn";
-            this.showBelowRBtn.Size = new System.Drawing.Size(80, 17);
-            this.showBelowRBtn.TabIndex = 3;
-            this.showBelowRBtn.TabStop = true;
-            this.showBelowRBtn.Text = "< 100 km/h";
-            this.showBelowRBtn.UseVisualStyleBackColor = true;
-            this.showBelowRBtn.CheckedChanged += new System.EventHandler(this.showBelowRButton_CheckedChanged);
             // 
             // vehicleList
             // 
@@ -132,10 +53,10 @@
             this.ProductionDate,
             this.Type});
             this.vehicleList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.vehicleList.Location = new System.Drawing.Point(0, 25);
+            this.vehicleList.Location = new System.Drawing.Point(0, 24);
             this.vehicleList.Name = "vehicleList";
             this.vehicleList.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.vehicleList.Size = new System.Drawing.Size(578, 375);
+            this.vehicleList.Size = new System.Drawing.Size(578, 376);
             this.vehicleList.TabIndex = 4;
             this.vehicleList.UseCompatibleStateImageBehavior = false;
             this.vehicleList.View = System.Windows.Forms.View.Details;
@@ -160,14 +81,24 @@
             this.Type.Text = "Type";
             this.Type.Width = 159;
             // 
-            // label1
+            // menuToolStripMenuItem
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(484, 7);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Counter:";
+            this.menuToolStripMenuItem.Name = "menuToolStripMenuItem";
+            this.menuToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
+            this.menuToolStripMenuItem.Text = "Add";
+            this.menuToolStripMenuItem.Click += new System.EventHandler(this.menuToolStripMenuItem_Click);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuToolStripMenuItem,
+            this.editToolStripMenuItem,
+            this.removeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(578, 24);
+            this.menuStrip1.TabIndex = 7;
+            this.menuStrip1.Text = "menuStrip1";
             // 
             // elementCounter
             // 
@@ -177,6 +108,65 @@
             this.elementCounter.Name = "elementCounter";
             this.elementCounter.Size = new System.Drawing.Size(0, 13);
             this.elementCounter.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(484, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Counter:";
+            // 
+            // showBelowRBtn
+            // 
+            this.showBelowRBtn.AutoSize = true;
+            this.showBelowRBtn.Location = new System.Drawing.Point(374, 7);
+            this.showBelowRBtn.Name = "showBelowRBtn";
+            this.showBelowRBtn.Size = new System.Drawing.Size(80, 17);
+            this.showBelowRBtn.TabIndex = 3;
+            this.showBelowRBtn.TabStop = true;
+            this.showBelowRBtn.Text = "< 100 km/h";
+            this.showBelowRBtn.UseVisualStyleBackColor = true;
+            this.showBelowRBtn.CheckedChanged += new System.EventHandler(this.showBelowRButton_CheckedChanged);
+            // 
+            // showAboveRBtn
+            // 
+            this.showAboveRBtn.AutoSize = true;
+            this.showAboveRBtn.Location = new System.Drawing.Point(278, 7);
+            this.showAboveRBtn.Name = "showAboveRBtn";
+            this.showAboveRBtn.Size = new System.Drawing.Size(80, 17);
+            this.showAboveRBtn.TabIndex = 2;
+            this.showAboveRBtn.TabStop = true;
+            this.showAboveRBtn.Text = "> 100 km/h";
+            this.showAboveRBtn.UseVisualStyleBackColor = true;
+            this.showAboveRBtn.CheckedChanged += new System.EventHandler(this.showAboveRBtn_CheckedChanged);
+            // 
+            // showAllRBtn
+            // 
+            this.showAllRBtn.AutoSize = true;
+            this.showAllRBtn.Location = new System.Drawing.Point(175, 5);
+            this.showAllRBtn.Name = "showAllRBtn";
+            this.showAllRBtn.Size = new System.Drawing.Size(70, 17);
+            this.showAllRBtn.TabIndex = 1;
+            this.showAllRBtn.TabStop = true;
+            this.showAllRBtn.Text = "display all";
+            this.showAllRBtn.UseVisualStyleBackColor = true;
+            this.showAllRBtn.CheckedChanged += new System.EventHandler(this.showAllRBtn_CheckedChanged);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click_1);
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click_1);
             // 
             // VehicleListView
             // 
@@ -189,13 +179,13 @@
             this.Controls.Add(this.showBelowRBtn);
             this.Controls.Add(this.showAboveRBtn);
             this.Controls.Add(this.showAllRBtn);
-            this.Controls.Add(this.toolStrip1);
+            this.Controls.Add(this.menuStrip1);
             this.Name = "VehicleListView";
             this.Text = "VehicleListView";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VehicleListView_FormClosing);
             this.Load += new System.EventHandler(this.VehicleListView_Load);
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -203,19 +193,19 @@
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.RadioButton showAllRBtn;
-        private System.Windows.Forms.RadioButton showAboveRBtn;
-        private System.Windows.Forms.RadioButton showBelowRBtn;
         private System.Windows.Forms.ListView vehicleList;
         private System.Windows.Forms.ColumnHeader Brand;
         private System.Windows.Forms.ColumnHeader MaxSpeed;
         private System.Windows.Forms.ColumnHeader ProductionDate;
         private System.Windows.Forms.ColumnHeader Type;
-        private System.Windows.Forms.ToolStripButton addBtn;
-        private System.Windows.Forms.ToolStripButton editBtn;
-        private System.Windows.Forms.ToolStripButton removeBtn;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem menuToolStripMenuItem;
+        private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label elementCounter;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton showBelowRBtn;
+        private System.Windows.Forms.RadioButton showAboveRBtn;
+        private System.Windows.Forms.RadioButton showAllRBtn;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
     }
 }

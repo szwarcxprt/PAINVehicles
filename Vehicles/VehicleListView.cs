@@ -40,7 +40,7 @@ namespace Vehicles
             ListViewItem item = new ListViewItem(vehicle.getBrand());
             item.Tag = vehicle;
             item.SubItems.Add(vehicle.getMaxSpeed().ToString());
-            item.SubItems.Add(vehicle.getProductionDate().ToString());
+            item.SubItems.Add(vehicle.getProductionDate().ToString("dd-MM-yyyy"));
             item.SubItems.Add(vehicle.getVehicleType().ToString());
 
             this.vehicleList.Items.Add(item);
@@ -74,7 +74,7 @@ namespace Vehicles
 
                     listItem.SubItems[0].Text = vehicle.getBrand();
                     listItem.SubItems[1].Text = vehicle.getMaxSpeed().ToString();
-                    listItem.SubItems[2].Text = vehicle.getProductionDate().ToString(CultureInfo.InvariantCulture);
+                    listItem.SubItems[2].Text = vehicle.getProductionDate().ToString("dd-MM-yyyy");
                     listItem.SubItems[3].Text = vehicle.getVehicleType().ToString();
                     return;
                 }
@@ -146,11 +146,6 @@ namespace Vehicles
             this.loadList();
         }
 
-        private void editBtn_Click(object sender, EventArgs e)
-        {
-            ((MainForm)MdiParent).EditVehicleForm(GetActiveItem());
-        }
-
         private Vehicle GetActiveItem()
         {
             if (vehicleList.SelectedItems.Count > 0)
@@ -160,15 +155,19 @@ namespace Vehicles
 
             return null;
         }
-
-        private void removeBtn_Click(object sender, EventArgs e)
-        {
-            ((MainForm)MdiParent).vehicleRemoved(GetActiveItem());
-        }
-
-        private void addBtn_Click(object sender, EventArgs e)
+        private void menuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ((MainForm)MdiParent).AddVehicleForm();
+        }
+
+        private void editToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ((MainForm)MdiParent).EditVehicleForm(GetActiveItem());
+        }
+
+        private void removeToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ((MainForm)MdiParent).vehicleRemoved(GetActiveItem());
         }
     }
 }
