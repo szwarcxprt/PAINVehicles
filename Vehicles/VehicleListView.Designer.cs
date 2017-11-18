@@ -41,6 +41,8 @@
             this.MaxSpeed = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.ProductionDate = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Type = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.label1 = new System.Windows.Forms.Label();
+            this.elementCounter = new System.Windows.Forms.Label();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,6 +66,7 @@
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(33, 22);
             this.addBtn.Text = "Add";
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // editBtn
             // 
@@ -83,6 +86,7 @@
             this.removeBtn.Name = "removeBtn";
             this.removeBtn.Size = new System.Drawing.Size(54, 22);
             this.removeBtn.Text = "Remove";
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
             // 
             // showAllRBtn
             // 
@@ -156,11 +160,31 @@
             this.Type.Text = "Type";
             this.Type.Width = 159;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(484, 7);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Counter:";
+            // 
+            // elementCounter
+            // 
+            this.elementCounter.AutoSize = true;
+            this.elementCounter.BackColor = System.Drawing.SystemColors.Window;
+            this.elementCounter.Location = new System.Drawing.Point(531, 7);
+            this.elementCounter.Name = "elementCounter";
+            this.elementCounter.Size = new System.Drawing.Size(0, 13);
+            this.elementCounter.TabIndex = 6;
+            // 
             // VehicleListView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 400);
+            this.Controls.Add(this.elementCounter);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.vehicleList);
             this.Controls.Add(this.showBelowRBtn);
             this.Controls.Add(this.showAboveRBtn);
@@ -191,5 +215,7 @@
         private System.Windows.Forms.ToolStripButton addBtn;
         private System.Windows.Forms.ToolStripButton editBtn;
         private System.Windows.Forms.ToolStripButton removeBtn;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label elementCounter;
     }
 }

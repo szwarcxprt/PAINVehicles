@@ -26,9 +26,8 @@ namespace Vehicles
        
 
         private void Add_Click(object sender, EventArgs e)
-        {   
-            AddVehicleForm add = new AddVehicleForm(this);
-            add.Show();
+        {
+            this.AddVehicleForm();
         }
 
         public void EditVehicleForm(Vehicle vehicle)
@@ -37,6 +36,11 @@ namespace Vehicles
                 return;
             AddVehicleForm edit = new AddVehicleForm(vehicle) {MdiParent = this};
             edit.Show();
+        }
+        public void AddVehicleForm()
+        {
+            AddVehicleForm add = new AddVehicleForm(this);
+            add.Show();
         }
 
         public Model getModel() {
@@ -55,11 +59,6 @@ namespace Vehicles
 
         }
 
-        /*public void refreshModel(Vehicle vehicle) {
-            foreach (var view in views)
-                view.refreshModel(vehicle);
-        }*/
-
         public void addVehicle(Vehicle vehicle)
         {
             this.model.Add(vehicle);
@@ -68,7 +67,9 @@ namespace Vehicles
         }
 
         public void vehicleRemoved(Vehicle vehicle) {
-        
+            this.model.Remove(vehicle);
+            foreach (var view in views)
+                view.vehicleRemoved(vehicle);
         }
 
         public void setControlBox(bool controlBox) {

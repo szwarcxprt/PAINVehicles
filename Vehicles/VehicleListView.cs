@@ -30,6 +30,7 @@ namespace Vehicles
         private void loadList()
         {
             this.vehicleList.Items.Clear();
+            this.updateCounter();
             foreach (var vehicle in model)
                 addVehicleToList(vehicle);
         }
@@ -51,6 +52,10 @@ namespace Vehicles
             this.model = ((MainForm)MdiParent).FilterVehicles(this.filter_type);
             this.loadList();
 
+        }
+
+        private void updateCounter(){
+            this.elementCounter.Text = model.Count.ToString();
         }
 
         public void editVehicle(Vehicle vehicle)
@@ -78,12 +83,14 @@ namespace Vehicles
                 this.vehicleList.Items.Remove(toRemove);
             if (vehicle.IsToAdd(filter_type))
                 addVehicleToList(vehicle);
+            this.updateCounter();
         }
 
         public void addVehicle(Vehicle vehicle)
         {
             if (vehicle.IsToAdd(this.filter_type))
                 addVehicleToList(vehicle);
+            this.updateCounter();
         }
 
         private bool isToAddToListView(Vehicle vehicle)
@@ -101,7 +108,14 @@ namespace Vehicles
         }
 
         public void vehicleRemoved(Vehicle vehicle) {
-        
+            foreach (ListViewItem listItem in this.vehicleList.Items)
+            {
+                if (listItem.Tag == vehicle)
+                {
+                    this.vehicleList.Items.Remove(listItem);
+                    this.updateCounter();
+                }
+            }
         }
 
         public void setControlBox(bool controlBox) {
@@ -145,6 +159,16 @@ namespace Vehicles
             }
 
             return null;
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            ((MainForm)MdiParent).vehicleRemoved(GetActiveItem());
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            ((MainForm)MdiParent).AddVehicleForm();
         }
     }
 }

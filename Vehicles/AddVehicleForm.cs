@@ -77,15 +77,8 @@ namespace Vehicles
                     ((MainForm)this.MdiParent).editVehicle(this.vehicle);
 
                 }
-
-                //Vehicle new_vehicle = new Vehicle(brand, max_speed, prod_date, type);
-                //((MainForm)this.MdiParent).addNewVehicle(new_vehicle);
-                //((MainForm)this.MdiParent).addVehicle(new_vehicle);
-                //((MainForm)this.MdiParent).refreshModel(new_vehicle);
-
                 this.Close();
             }
-
         }
 
         private void cancelBtn_Click(object sender, EventArgs e)
